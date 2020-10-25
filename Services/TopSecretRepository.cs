@@ -97,7 +97,8 @@ namespace Api.Services
             if (validation)
                 Calculate(satellites.Satellites);
 
-            return new Response((ShipCoordinates != null && ShipMessage != null) ? 200 : 404, ShipCoordinates, ShipMessage);
+            int intCode = (ShipCoordinates != null && ShipMessage != null) ? 200 : 404;
+            return new Response(intCode, ShipCoordinates, (intCode == 404 ? "Falta información" : ShipMessage));
         }
     }
 }
