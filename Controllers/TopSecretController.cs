@@ -7,18 +7,16 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+
 namespace Api.Controllers
 {
+    [RoutePrefix("api/topsecret")]
     public class TopSecretController : ApiController
     {
-        private TopSecretRepository topSecretRepository;
-        public TopSecretController()
+        private TopSecretRepository topSecretRepository = new TopSecretRepository();
+        public Response POST(object request)
         {
-            topSecretRepository = new TopSecretRepository();
-        }
-        public TopSecret[] Get(int Distance)
-        {
-            return topSecretRepository.GetSecret(Distance);
+            return topSecretRepository.GetSecret(request);
         }
     }
 }

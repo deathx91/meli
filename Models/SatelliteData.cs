@@ -5,10 +5,12 @@ using System.Web;
 
 namespace Api.Models
 {
-    public class TopSecret
+    public class SatelliteData
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
+
+        public double Distance { get; set; }
+
+        public string[] Message { get; set; }
     }
 }
