@@ -2,8 +2,8 @@
 {
     public class Coordinates
     {
-        private double X { get; set; }
-        private double Y { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
         public Coordinates(double x, double y)
         {
             X = x;
